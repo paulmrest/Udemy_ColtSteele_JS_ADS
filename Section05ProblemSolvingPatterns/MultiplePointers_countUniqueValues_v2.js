@@ -3,14 +3,14 @@ function countUniqueValues(arr) {
     return 0;
   }
   var firstIndex = 0;
-  var secondIndex = 0;
+  var secondIndex = 1;
   while (arr.length > secondIndex) {
     if (arr[firstIndex] != arr[secondIndex]) {
       firstIndex++;
       arr[firstIndex] = arr[secondIndex];
-      secondIndex++
+      secondIndex++;
     } else {
-      secondIndex++
+      secondIndex++;
     }
   }
   return firstIndex + 1;
