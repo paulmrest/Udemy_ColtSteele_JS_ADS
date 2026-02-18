@@ -22,7 +22,7 @@ function averagePair(arr, average) {
   while (arr.length > follow + 1) {
     if ((arr[follow] + arr[lead]) / 2.0 === average) {
       return true;
-    } else if (arr.length > lead) {
+    } else if (arr.length - 1 > lead) {
       lead++;
     } else {
       follow++
