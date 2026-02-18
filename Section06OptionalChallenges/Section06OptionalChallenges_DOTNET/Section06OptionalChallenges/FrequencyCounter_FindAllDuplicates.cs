@@ -11,7 +11,7 @@ public partial class FrequencyCounter
     {
       return new int[]{};
     }
-    //List<int> twice = new List<int>();
+    
     Dictionary<int, int> tracker = new Dictionary<int, int>();
     foreach (int num in nums)
     {
