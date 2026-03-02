@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\ArrayUtilitiesDOTNET\ArrayUtilities\ArrayUtilities.csproj" />
+    <ProjectReference Include="..\..\..\ArrayUtilitiesDOTNET\ArrayUtilities.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
