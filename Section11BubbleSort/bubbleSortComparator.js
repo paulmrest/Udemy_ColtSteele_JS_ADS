@@ -23,6 +23,8 @@ console.log(bubbleSort([]));
 let nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
 console.log(bubbleSort(nums));
 
+console.log(bubbleSort(nums, (a, b) => b - a));
+
 let kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
 
 function strComp(a, b) {
