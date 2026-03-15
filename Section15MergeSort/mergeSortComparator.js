@@ -31,31 +31,31 @@ function mergeComparator(arr1, arr2, comparator = (a, b) => a - b) {
   return mergedArray;
 }
 
-// var arr3 = [-2,-1,0,4,5,6];
-// var arr4 = [-3,-2,-1,2,3,5,7,8];
-// console.log(mergeComparator(arr3, arr4));
+var arr3 = [-2,-1,0,4,5,6];
+var arr4 = [-3,-2,-1,2,3,5,7,8];
+console.log(mergeComparator(arr3, arr4));
 
-// var names = ["Bob", "Ethel", "Christine"];
-// var otherNames = ["M", "Colt", "Allison", "SuperLongNameOMG"];
+var names = ["Bob", "Ethel", "Christine"];
+var otherNames = ["M", "Colt", "Allison", "SuperLongNameOMG"];
  
-// function stringLengthComparator(str1, str2) {
-//   return str1.length - str2.length;
-// }
+function stringLengthComparator(str1, str2) {
+  return str1.length - str2.length;
+}
 
-// console.log(mergeComparator(names, otherNames, stringLengthComparator));
+console.log(mergeComparator(names, otherNames, stringLengthComparator));
 
 var nums = [4, 3, 5, 3, 43, 232, 4, 34, 232, 32, 4, 35, 34, 23, 2, 453, 546, 75, 67, 4342, 32];
 console.log(mergeSortComparator(nums));
 
-// var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
+var kitties = ["LilBub", "Garfield", "Heathcliff", "Blue", "Grumpy"];
  
-// function strComp(a, b) {
-//   if (a < b) { return -1;}
-//   else if (a > b) { return 1;}
-//   return 0;
-// }
+function strComp(a, b) {
+  if (a < b) { return -1;}
+  else if (a > b) { return 1;}
+  return 0;
+}
 
-// console.log(mergeSortComparator(kitties, strComp));
+console.log(mergeSortComparator(kitties, strComp));
 
 var moarKittyData = [{
   name: "LilBub",
@@ -80,12 +80,12 @@ function oldestToYoungest(a, b) {
 
 console.log(mergeSortComparator(moarKittyData, oldestToYoungest));
 
-// console.log(mergeSortComparator([10, 2, 55, 6, 3, 11, 15]));
-// console.log(mergeSortComparator([10, 24, 76, 73, 1, 9]));
-// console.log(mergeSortComparator([10, 24, 76, 73]));
+console.log(mergeSortComparator([10, 2, 55, 6, 3, 11, 15]));
+console.log(mergeSortComparator([10, 24, 76, 73, 1, 9]));
+console.log(mergeSortComparator([10, 24, 76, 73]));
 
-// const descending = (a, b) => b - a;
+const descending = (a, b) => b - a;
 
-// console.log(mergeSortComparator([10, 2, 55, 6, 3, 11, 15], descending));
-// console.log(mergeSortComparator([10, 24, 76, 73, 1, 9], descending));
-// console.log(mergeSortComparator([10, 24, 76, 73], descending));
+console.log(mergeSortComparator([10, 2, 55, 6, 3, 11, 15], descending));
+console.log(mergeSortComparator([10, 24, 76, 73, 1, 9], descending));
+console.log(mergeSortComparator([10, 24, 76, 73], descending));
