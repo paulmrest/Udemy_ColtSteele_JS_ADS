@@ -65,13 +65,36 @@ class SinglyLinkedList {
     let newNode = new Node(val);
     if (this.head) {
       newNode.next = this.head;
-      this.head = newNode;
     } else {
-      this.head = newNode;
       this.tail = newNode;
     }
+    this.head = newNode;
     this.length++;
     return this;
+  }
+
+  get(index) {
+    if (this.head && index >= 0 && index < this.length - 1) {
+      let currNode = this.head;
+      let currIndex = 0;
+      while (currNode) {
+        if (currIndex === index) {
+          return currNode;
+        }
+        currNode = currNode.next;
+        currIndex++;
+      }
+    }
+    return null;
+  }
+
+  set(index, val) {
+    let node = this.get(index);
+    if (node) {
+      node.val = val;
+      return true;
+    }
+    return false;
   }
 }
 
@@ -83,9 +106,17 @@ console.log(linkedList.push(25));
 console.log(linkedList.push(35));
 console.log(linkedList.push(45));
 
-console.log(linkedList.unshift("four"));
-console.log(linkedList.unshift("three"));
-console.log(linkedList.unshift("two"));
+console.log(linkedList.set(2, "twenty-five"));
+console.log(linkedList.set(0, "five"));
+console.log(linkedList.set(5, "fifty-five"));
+
+// console.log(linkedList.get(3));
+// console.log(linkedList.get(0));
+// console.log(linkedList.get(8));
+
+// console.log(linkedList.unshift("four"));
+// console.log(linkedList.unshift("three"));
+// console.log(linkedList.unshift("two"));
 
 // console.log(linkedList.shift());
 // console.log(linkedList.shift());
