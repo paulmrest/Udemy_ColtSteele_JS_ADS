@@ -21,28 +21,28 @@ class SinglyLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    this.length += 1;
+    this.length++;
     return this;
   }
 
   pop() {
     if (this.head) {
-      let poppedNode = null;
+      let oldTail = null;
       if (this.head.next) {
         let newTail = this.head;
         while (newTail.next.next) {
           newTail = newTail.next;
         }
-        poppedNode = newTail.next;
+        oldTail = newTail.next;
         newTail.next = null;
         this.tail = newTail;
       } else {
-        poppedNode = this.head;
+        oldTail = this.head;
         this.head = null;
         this.tail = null;
       }
-      this.length -= 1;
-      return poppedNode;
+      this.length--;
+      return oldTail;
     }
     return undefined;
   }
@@ -54,18 +54,24 @@ class SinglyLinkedList {
       if (!oldHead.next) {
         this.tail = null;
       }
-
-      // if (oldHead.next) {
-      //   this.head = oldHead.next;
-      // } else {
-      //   this.head = null;
-      //   this.tail = null;
-      // }
       oldHead.next = null;
-      this.length -= 1;
+      this.length--;
       return oldHead;
     }
     return undefined;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (this.head) {
+      newNode.next = this.head;
+      this.head = newNode;
+    } else {
+      this.head = newNode;
+      this.tail = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
 
@@ -77,12 +83,16 @@ console.log(linkedList.push(25));
 console.log(linkedList.push(35));
 console.log(linkedList.push(45));
 
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
+console.log(linkedList.unshift("four"));
+console.log(linkedList.unshift("three"));
+console.log(linkedList.unshift("two"));
+
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
 
 // console.log(linkedList.pop());
 // console.log(linkedList.pop());
