@@ -134,9 +134,48 @@ class SinglyLinkedList {
     }
     return undefined;
   }
+
+  reverse() {
+    var currNode = this.head;
+    this.head = this.tail;
+    this.tail = currNode;
+    let nextNode;
+    var prevNode = null;
+    while (currNode) {
+      nextNode = currNode.next;
+      currNode.next = prevNode;
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+    return this;
+  }
+
+  rotate(index) {
+    if (index !== 0) {
+      let prevNode = null;
+      let currNode = this.head;
+      let currIndex = 0;
+      while (currNode) {
+        if (currIndex === index || (index < 0 && currIndex - this.length === index)) {
+          prevNode.next = null;
+          this.tail.next = this.head;
+          this.head = currNode;
+          this.tail = prevNode;
+          break;
+        } else {
+          prevNode = currNode;
+          currNode = currNode.next;
+          currIndex++;
+        }
+      }
+    }
+    return this;
+  }
 }
 
 let linkedList = new SinglyLinkedList();
+
+console.log(linkedList.reverse());
 
 console.log(linkedList.push(5));
 console.log(linkedList.push(15));
@@ -144,9 +183,18 @@ console.log(linkedList.push(25));
 console.log(linkedList.push(35));
 console.log(linkedList.push(45));
 
-console.log(linkedList.remove(3));
-console.log(linkedList.remove(0));
-console.log(linkedList.remove(2));
+// linkedList.push(13);
+// linkedList.push(27);
+// linkedList.push(32);
+// linkedList.push(71);
+
+//linkedList.rotate(-2);
+
+//console.log(linkedList.reverse());
+
+// console.log(linkedList.remove(3));
+// console.log(linkedList.remove(0));
+// console.log(linkedList.remove(2));
 
 // console.log(linkedList.insert(2, 20));
 // console.log(linkedList.insert(0, 3));
