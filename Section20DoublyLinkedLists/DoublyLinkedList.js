@@ -70,24 +70,61 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
+  get(index) {
+    if (this.head && index >= 0 && index < this.length) {
+      let searchLeftToRight = Math.floor(this.length / 2) > index;
+      let currNode = searchLeftToRight ? this.head : this.tail;
+      let currIndex = searchLeftToRight ? 0 : this.length - 1;
+      while (currNode) {
+        if (currIndex === index) {
+          return currNode;
+        }
+        currNode = searchLeftToRight ? currNode.next : currNode.prev;
+        currIndex = searchLeftToRight ? currIndex + 1 : currIndex - 1;
+      }
+    }
+    return null;
+  }
+
+  set(index, val) {
+    let node = this.get(index);
+    if (node) {
+      node.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 let linkedList = new DoublyLinkedList();
 
 console.log(linkedList.push(5));
-// console.log(linkedList.push(15));
-// console.log(linkedList.push(25));
-// console.log(linkedList.push(35));
-// console.log(linkedList.push(45));
+console.log(linkedList.push(15));
+console.log(linkedList.push(25));
+console.log(linkedList.push(35));
+console.log(linkedList.push(45));
+console.log(linkedList.push(55));
+console.log(linkedList.push(65));
+console.log(linkedList.push(75));
+console.log(linkedList.push(85));
+console.log(linkedList.push(95));
+
+console.log(linkedList.set(4, 44));
+console.log(linkedList.set(11, 44));
+
+// console.log(linkedList.get(2));
+// console.log(linkedList.get(4));
+// console.log(linkedList.get(5));
 
 // console.log(linkedList.unshift(3));
 // console.log(linkedList.unshift(2));
 
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
-console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
+// console.log(linkedList.shift());
 
 // console.log(linkedList.pop());
 // console.log(linkedList.pop());
